@@ -426,6 +426,19 @@
             background-color: var(--bg-dark);
             color: white;
         }
+
+        /* --- Footer Styles (Matching Main Site) --- */
+        .social-icons { margin-top: 20px; display: flex; gap: 15px; }
+        .social-icons a { color: #b0c4de; font-size: 1.2rem; transition: color 0.3s; }
+        .social-icons a:hover { color: #00ff7f; }
+        .newsletter-form { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+        .newsletter-form input { padding: 12px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; }
+        .newsletter-form button { padding: 12px; background: var(--accent-blue, #007bff); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+        .newsletter-form button:hover { background: #0056b3; }
+        .legal-links { display: flex; gap: 20px; }
+        .legal-links a { color: #b0c4de; font-size: 0.9rem; text-decoration: none; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; }
+        @media (max-width: 768px) { .footer-bottom { flex-direction: column; gap: 15px; } }
     </style>
 </head>
 <body>
@@ -473,27 +486,27 @@
             <div class="benefit-card">
                 <i class="fas fa-handshake benefit-icon"></i>
                 <h3>Deepens Relationships</h3>
-                [cite_start]<p>Enhanced personalized support drives Client Loyalty [cite: 6-7].</p>
+                <p>Enhanced personalized support drives Client Loyalty.</p>
             </div>
             <div class="benefit-card">
                 <i class="fas fa-chart-line benefit-icon"></i>
                 <h3>Accelerates CLV</h3>
-                [cite_start]<p>Converts transactional customers into long-term clients [cite: 8-9].</p>
+                <p>Converts transactional customers into long-term clients.</p>
             </div>
             <div class="benefit-card">
                 <i class="fas fa-coins benefit-icon"></i>
                 <h3>Unlocks Revenue</h3>
-                [cite_start]<p>Identifies precise moments for cross-selling and up-selling [cite: 10-11].</p>
+                <p>Identifies precise moments for cross-selling and up-selling.</p>
             </div>
             <div class="benefit-card">
                 <i class="fas fa-chalkboard-user benefit-icon"></i>
                 <h3>Empowers Managers</h3>
-                [cite_start]<p>Provides actionable intelligence for targeted coaching [cite: 12-13].</p>
+                <p>Provides actionable intelligence for targeted coaching.</p>
             </div>
             <div class="benefit-card">
                 <i class="fas fa-shield-halved benefit-icon"></i>
                 <h3>Tangible ROI</h3>
-                [cite_start]<p>Measurable improvements in Revenue and CSAT [cite: 14-15].</p>
+                <p>Measurable improvements in Revenue and CSAT.</p>
             </div>
         </div>
     </section>
@@ -735,30 +748,67 @@
     </section>
 
     <footer class="site-footer">
-        <div class="footer-container">       
+        <div class="footer-container">
             <div class="footer-col company-info">
                 <div class="footer-logo">
                     <img src="logo.png" alt="DataMatrix AI Logo" class="logo-img">
                     <h2>Datamatrix<span class="highlight">.AI</span></h2>
                 </div>
                 <p class="company-desc">
-                    Transforming businesses through innovative AI solutions.
+                    Transforming businesses through innovative AI solutions that drive
+                    growth, efficiency, and competitive advantage.
                 </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
+
             <div class="footer-col">
                 <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Main Home</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#case-studies">Case Studies</a></li>
-                    <li><a href="#pricing">Plans</a></li>
-                    <li><a href="accounts.html">Accounts</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#careers">Careers</a></li>
+                    <li><a href="index.html#aboutus">About Us</a></li>
                     <li><a href="index.html#contact">Contact Us</a></li>
                 </ul>
             </div>
+
+            <div class="footer-col">
+                <h3 class="footer-heading">Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">LLM Integration</a></li>
+                    <li><a href="#">Agentic AI Solutions</a></li>
+                    <li><a href="#">RAG Systems</a></li>
+                    <li><a href="#">AI Consulting</a></li>
+                    <li><a href="#">Data Analysis</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h3 class="footer-heading">Newsletter</h3>
+                <p class="newsletter-desc">
+                    Subscribe to our newsletter to receive updates on the latest AI trends.
+                </p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </div>
+
         <div class="footer-bottom">
-            <div class="copyright">&copy; 2025 DataMatrixai. All rights reserved.</div>
+            <div class="copyright">
+                &copy; 2025 DataMatrixai. All rights reserved.
+            </div>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
         </div>
     </footer>
 
@@ -780,7 +830,7 @@
                 
                 // 3. SEND TO GOOGLE SHEET (Backend)
                 // *** PASTE YOUR URL INSIDE THE QUOTES BELOW ***
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbxm6F7W0PG1M0V8rhR15jx4Ari2QWz3nn5eBj0EOH65ehUmGMFHdRbkY4b1nNbe_tUAlg/exec';
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxm6F7W0PG1M0V8rhR15jx4Ari2QWz3nn5eBj0EOH65ehUmGMFHdRbkY4b1nNbe_tUAlg/exec'; 
 
                 fetch(scriptURL, { method: 'POST', body: formData })
                     .then(response => {
