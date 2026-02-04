@@ -10,8 +10,114 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-</head>
+    <style>
+        /* Small inline style to ensure the new list in the hero section looks clean */
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            color: #d1d5db; /* Matching common hero text colors */
+        }
+        .service-list li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .service-list strong {
+            color: #fff; /* White for emphasis */
+            font-weight: 600;
+        }
 
+        /* --- Centering Styles for Header & Subheading --- */
+        .hero-header-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            text-align: center; /* Centers the text */
+            margin-bottom: 2rem; /* Adds some space below the header block */
+        }
+        
+        .hero-header-content {
+            max-width: 900px; /* Constrains width so text doesn't span too wide */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the items horizontally */
+        }
+
+        .hero-title {
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 800px; /* nice reading width for the subtitle */
+        }
+
+        /* --- PRODUCT SECTION REFINEMENTS --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider minimum width */
+            gap: 2rem;
+            align-items: stretch; /* Ensures all cards stretch to the same height */
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column; /* Stacks content vertically */
+            height: 100%; /* Forces card to fill the grid cell height */
+            background: rgba(15, 23, 42, 0.6); /* Slightly darker, more premium background */
+            /* DEFAULT BORDER: White with low opacity (Invisible/Subtle) */
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* HOVER STATE: Blue border appears ONLY here */
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(6, 182, 212, 0.2);
+            border-color: rgba(6, 182, 212, 0.5); /* Cyan glow border */
+        }
+
+        .product-desc {
+            flex-grow: 1; /* Pushes the 'Learn More' link to the bottom */
+            color: #94a3b8; /* Softer text color for descriptions */
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .product-link {
+            margin-top: auto; /* Ensures link stays at the bottom */
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+            color: #38bdf8; /* Bright cyan/blue */
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+
+        .product-link:hover {
+            color: #0ea5e9;
+            gap: 10px; /* Moves arrow slightly on hover */
+        }
+
+        .product-icon-container {
+            width: 60px;
+            height: 60px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
 
     <header>
         <a href="#" class="logo-container">
@@ -39,21 +145,32 @@
         <div class="hero-header-container">
             <div class="hero-header-content">
                     <h1 class="hero-title">Transforming Business with <span class="highlight">Advanced AI</span></h1>
-                    <p class="hero-subtitle">Powered by Large Language Models, Agentic AI, and Retrieval-Augmented Generation, we build autonomous intelligence that helps businesses lead, scale, and dominate in the AI era.</p>
+                    <p class="hero-subtitle">Empowering enterprises and innovators to adopt AI with confidence—from strategy through responsible, real-world deployment</p>
             </div>
         </div>
         <div class="hero-main-layout">
             <div class="hero-left-new">
                 <div>
-                    <p class="lead-text">At DatamatrixAI, we support the full AI lifecycle from strategy to execution.</p>
-                    <p class="detail-text">We deliver end-to-end AI services—including consulting, product development, custom engineering, research and development, and training—helping organizations move from strategy to secure, production-ready AI with privacy and compliance at the core.</p>    
+                    <p class="lead-text">Datamatrix.AI partners with enterprises to design, build, and deploy AI systems that are secure, compliant, and ready for real-world use.</p>
+                    <p class="detail-text">We deliver end-to-end AI services across the full lifecycle:</p>
+                    
+                    <ul class="service-list">
+                        <li>
+                            <strong>AI Strategy & Consulting:</strong> Aligning business goals, data, and architecture to define clear, actionable AI roadmaps.
+                        </li>
+                        <li>
+                            <strong>Custom AI & Product Development:</strong> Building production-ready solutions using LLMs, Agentic AI, and modern machine learning.
+                        </li>
+                        <li>
+                            <strong>Engineering, MLOps & Deployment:</strong> Integrating AI into enterprise systems with scalability, reliability, and governance built in.
+                        </li>
+                        <li>
+                            <strong>Research, Innovation & Training:</strong> Advancing capabilities through applied R&D and upskilling teams to adopt AI responsibly.
+                        </li>
+                    </ul>
                 </div>
                 
-                <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Get Started</a>
-                    <a href="#" class="btn-outline">Explore Services</a>
                 </div>
-            </div>
 
             <div class="hero-video">
                 <video autoplay muted loop playsinline>
@@ -65,8 +182,8 @@
 
     <section id="products" class="products-section">
         <div class="section-header-product">
-            <h2>Our Products</h2>
-            <p>Proprietary AI frameworks built for enterprise-scale performance and security.</p>
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: #fff; font-family: 'Outfit', sans-serif;">Our Products</h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 3rem auto;">Proprietary AI frameworks built for enterprise-scale performance and security.</p>
         </div>
 
         <div class="products-grid">
@@ -75,28 +192,27 @@
                     <i class="fas fa-brain"></i>
                 </div>
                 <h3 class="product-title">EDIS</h3>
-                <p class="product-desc">EDIS transforms how leaders consume and interact with data. It Ingests documents and dashboards across platforms. Uses advanced AI (LLMs + vision models) to parse text, tables, charts, and images. Enables natural language querying for instant insights. Automatically generates summaries, trend analyses, and strategic reports. </p>
-                <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <p class="product-desc">EDIS is an AI-powered Business Intelligence (BI) chatbot platform that extracts strategic and operational insights from unstructured, multimodal business content—including PDFs, PowerPoint presentations, SharePoint files, and Tableau dashboards. It empowers CXOs with real-time answers without waiting on data teams.</p>
+                <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
             </div>
 
-            <div class="product-card highlighted">
+            <div class="product-card">
                 <div class="product-icon-container">
-                    <i class="fas fa-microchip"></i>
+                    <i class="fas fa-comments"></i>
                 </div>
-                <h3 class="product-title">MELC</h3>
-                <p class="product-desc">MelC offers a multilingual audio transcription and audit platform that enhances customer satisfaction by ensuring accurate communication and responses. This tool is designed to streamline the auditing process, making it easier to analyze customer interactions and derive actionable insights.</p>
-                <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <h3 class="product-title">MelC</h3>
+                <p class="product-desc">MelC is an AI-powered Conversational Audit Tool offering a multilingual audio transcription and audit platform. It enhances customer satisfaction by ensuring accurate communication. Designed to streamline the auditing process, it makes analyzing customer interactions and deriving actionable insights easier and faster.</p>
+                <a href="melc.html" class="product-link">Visit Website <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
             </div>
 
-            <div class="product-card highlighted">
-    <div class="product-icon-container">
-        <i class="fas fa-microchip"></i>
-    </div>
-    <h3 class="product-title">MELC</h3>
-    <p class="product-desc">MelC offers a multilingual audio transcription and audit platform that enhances customer satisfaction by ensuring accurate communication and responses. This tool is designed to streamline the auditing process, making it easier to analyze customer interactions and derive actionable insights.</p>
-    
-    <a href="melc.html" class="product-link">Visit Website <i class="fas fa-arrow-right"></i></a>
-</div>
+            <div class="product-card">
+                <div class="product-icon-container">
+                    <i class="fas fa-drafting-compass"></i>
+                </div>
+                <h3 class="product-title">BoQx</h3>
+                <p class="product-desc">BoQx is an AI-powered image extraction tool that transforms complex CAD drawings into precise Bills of Quantities (BOQs) instantly. Designed for architects and engineers, it automates manual quantity estimation—delivering speed, accuracy, and consistency across projects of any size.</p>
+                <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
+            </div>
         </div>
     </section>
 
